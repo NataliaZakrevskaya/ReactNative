@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
 export const WIDTH = width;
@@ -17,9 +18,9 @@ const services: ServiceType[] = new Array( 2 ).fill( null ).map( ( item, index )
 } ) );
 const render: ListRenderItem<ServiceType> = ( { item } ) => {
   return <View style={ styles.serviceItem }>
-    <View style={{maxWidth: 200}}>
-      <Text style={ [ styles.text, styles.mainText, {marginBottom: 15} ] }>{ item.title }</Text>
-      <Text style={ [ styles.text, styles.thinText, {fontSize: 12, marginBottom: 6} ] }>{ item.text }</Text>
+    <View style={ { maxWidth: 200 } }>
+      <Text style={ [ styles.text, styles.mainText, { marginBottom: 15 } ] }>{ item.title }</Text>
+      <Text style={ [ styles.text, styles.thinText, { fontSize: 12, marginBottom: 6 } ] }>{ item.text }</Text>
       <View style={ {
         display: 'flex',
         flexDirection: 'row',
@@ -27,16 +28,15 @@ const render: ListRenderItem<ServiceType> = ( { item } ) => {
         justifyContent: 'flex-start',
       } }>
         <Text style={ [ styles.text, styles.thinText, { fontSize: 12, marginRight: 4 } ] }>Подробнее</Text>
-        <Image
-          style={ styles.arrowRight }
-          source={ require( '@expo/assets/arrowRight.png' ) }
-        />
+        <MyArrowRightSvg/>
       </View>
     </View>
     <View>
       <Image
         style={ styles.carPicture }
-        source={ require( '@expo/assets/carPicture.png' ) }
+        source={ {
+          uri: 'https://cdn4.iconfinder.com/data/icons/love-velentine/140/car__gift__vehicle__present__surprise-512.png',
+        } }
       />
     </View>
   </View>;
@@ -85,18 +85,17 @@ const styles = StyleSheet.create( {
     paddingLeft: 10,
     paddingRight: 23,
     paddingBottom: 7,
-    marginBottom: 8
+    marginBottom: 8,
   },
   arrowRight: {
     width: 6.72,
     height: 11.08,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   carPicture: {
     width: 84.84,
-    height: 80
+    height: 80,
   },
 } );
-
 
 export default UsefulInfo;

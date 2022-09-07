@@ -1,8 +1,9 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import MyGroupMenuSvg from '../svg/MyGroupMenuSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
-export const WIDTH = width;
+const WIDTH = width;
 const PADDING_HORIZONTAL = 13;
 
 const AutoCardForGaragePage = () => {
@@ -25,13 +26,12 @@ const AutoCardForGaragePage = () => {
         flexDirection: 'column',
         alignItems: 'flex-end',
       } }>
-        <Image
-          style={ styles.groupMenu }
-          source={ require( '@expo/assets/groupMenu.png' ) }
-        />
+        <MyGroupMenuSvg style={ styles.groupMenu }/>
         <Image
           style={ styles.autoImage }
-          source={ require( '@expo/assets/carImage.png' ) }
+          source={ {
+            uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png',
+          }}
         />
       </View>
     </View>

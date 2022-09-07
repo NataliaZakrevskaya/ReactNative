@@ -1,13 +1,11 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import MyStitchesSvg from '../svg/MyStitchesSvg';
 
-const StitchesInfo = ({stitchesCount}: {stitchesCount: number}) => {
+const StitchesInfo = ( { stitchesCount }: { stitchesCount: number } ) => {
   return (
     <View style={ styles.stitchesContainer }>
-      <Image
-        style={ styles.stitchesLogo }
-        source={ require( '@expo/assets/stitchesLogo.png' ) }
-      />
+      <MyStitchesSvg style={ styles.stitchesLogo }/>
       <Text style={ [ styles.text, styles.stitchesText ] }>{ stitchesCount }</Text>
     </View>
   );
@@ -22,7 +20,7 @@ const styles = StyleSheet.create( {
   stitchesLogo: {
     width: 15,
     height: 15,
-    marginRight: 3
+    marginRight: 3,
   },
   text: {
     fontFamily: 'Roboto',

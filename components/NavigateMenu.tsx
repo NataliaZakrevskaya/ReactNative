@@ -1,11 +1,11 @@
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import MyBackIcon from '../svg/MyBackIcon';
 
 const { height, width } = Dimensions.get( 'screen' );
 const WIDTH = width;
-const PADDING_HORIZONTAL = 13;
 
-const NavigateMenu = ({navName}: {navName: string}) => {
+const NavigateMenu = ( { navName }: { navName: string } ) => {
 
   return (
     <View style={ {
@@ -14,10 +14,7 @@ const NavigateMenu = ({navName}: {navName: string}) => {
       justifyContent: 'space-between',
       width: ( ( WIDTH / 3 ) * 1.9 ),
     } }>
-      <Image
-        style={ styles.backIcon }
-        source={ require( '@expo/assets/backIcon.png' ) }
-      />
+      <MyBackIcon style={ styles.backIcon }/>
       <Text style={ [ styles.text, styles.mainText ] }>
         { navName }
       </Text>

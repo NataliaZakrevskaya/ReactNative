@@ -13,7 +13,9 @@ const TestDrivePage = () => {
       <NavigateMenu navName={ 'Ford Focus III ' }/>
       <Image
         style={ styles.autoImage }
-        source={ require( '@expo/assets/carImage.png' ) }
+        source={ {
+          uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png',
+        }}
       />
       <Text style={ [ styles.text, styles.mainText, { marginBottom: 12 } ] }>{ carName }</Text>
       <Text style={ [ styles.text, styles.thinText ] }>Описание</Text>

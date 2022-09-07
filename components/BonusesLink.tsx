@@ -1,8 +1,9 @@
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
-export const WIDTH = width;
+const WIDTH = width;
 const PADDING_HORIZONTAL = 13;
 
 const BonusesLink = () => {
@@ -13,9 +14,7 @@ const BonusesLink = () => {
     <View style={ styles.container }>
       <Text style={ [ styles.text, styles.thinText ] }>Бонусные баллы: <Text
         style={ [ styles.text, styles.mainText ] }>{ BONUSES_COUNT }</Text></Text>
-      <Image
-        style={ styles.arrowRight }
-        source={ require( '@expo/assets/arrowRight.png' ) }/>
+      <MyArrowRightSvg/>
     </View>
   );
 };
@@ -32,7 +31,7 @@ const styles = StyleSheet.create( {
     height: 50,
     paddingLeft: 10,
     paddingRight: 13,
-    marginBottom: 14
+    marginBottom: 14,
   },
   text: {
     fontFamily: 'Roboto',
@@ -47,11 +46,9 @@ const styles = StyleSheet.create( {
     fontWeight: '400',
     fontSize: 14,
   },
-  arrowRight: {
-    height: 14,
-    width: 9,
+  /*arrowRight: {
     resizeMode: 'contain',
-  },
+  },*/
 } );
 
 export default BonusesLink;

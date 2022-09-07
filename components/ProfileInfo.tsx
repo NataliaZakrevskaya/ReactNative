@@ -1,6 +1,9 @@
-
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
+import MyNotificationSvg from '../svg/MyNotificationSvg';
+import MyArrowSvg from '../svg/MyErrowSvg';
+import MyEllipseSvg from '../svg/MyEllipseSvg';
+
 const { height, width } = Dimensions.get( 'screen' );
 export const WIDTH = width;
 
@@ -17,24 +20,19 @@ const ProfileInfo = () => {
         <Text style={ [ styles.text, styles.mainText ] }>Иванов Иван</Text>
         <View style={ { display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' } }>
           <Text style={ [ styles.text, styles.cityName ] }>Магнитогорск</Text>
-          <Image
-            style={ styles.arrow }
-            source={ require( '@expo/assets/arrow.png' ) }/>
+          <MyArrowSvg/>
         </View>
       </View>
       <View style={ { display: 'flex', flexDirection: 'row', alignItems: 'center' } }>
         <View style={ { position: 'relative' } }>
-          <Image
-            style={ styles.ellipse }
-            source={ require( '@expo/assets/ellipse.png' ) }/>
-          <Image
-            style={ styles.notificationLogo }
-            source={ require( '@expo/assets/notification.png' ) }
-          />
+          <MyEllipseSvg style={ styles.ellipse }/>
+          <MyNotificationSvg style={ styles.notificationLogo }/>
         </View>
         <Image
           style={ styles.profileIcon }
-          source={ require( '@expo/assets/profileIcon.png' ) }
+          source={ {
+            uri: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+          } }
         />
       </View>
     </View>
@@ -44,20 +42,16 @@ const ProfileInfo = () => {
 const styles = StyleSheet.create( {
     ellipse: {
       position: 'absolute',
-      width: 7,
-      height: 7,
       top: 0,
       right: 7,
       zIndex: 2,
     },
     notificationLogo: {
-      width: 16,
-      height: 18.82,
-      marginRight: 8
+      marginRight: 8,
     },
     profileIcon: {
       width: 44,
-      height: 44
+      height: 44,
     },
     text: {
       fontFamily: 'Roboto',
@@ -78,9 +72,9 @@ const styles = StyleSheet.create( {
       height: 6.72,
     },
     textContainer: {
-      width: ((WIDTH / 3) * 2)
-    }
-}
-)
+      width: ( ( WIDTH / 3 ) * 2 ),
+    },
+  },
+);
 
 export default ProfileInfo;

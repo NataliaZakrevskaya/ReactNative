@@ -1,5 +1,7 @@
 import React from 'react';
-import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, FlatList, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import MyWrenchIcon from '../svg/MyWrenchIcon';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
 const WIDTH = width;
@@ -21,16 +23,10 @@ const getItem: ListRenderItem<ServiceItemType> = ( { item } ) => {
       flexDirection: 'row',
       alignItems: 'center',
     } }>
-      <Image
-        style={ styles.wrenchIcon }
-        source={ require( '@expo/assets/wrenchIcon.png' ) }
-      />
+      <MyWrenchIcon style={ styles.wrenchIcon }/>
       <Text>{ item.title }</Text>
     </View>
-    <Image
-      style={ styles.arrowRight }
-      source={ require( '@expo/assets/arrowRight.png' ) }
-    />
+    <MyArrowRightSvg style={ styles.arrowRight }/>
   </View>;
 };
 

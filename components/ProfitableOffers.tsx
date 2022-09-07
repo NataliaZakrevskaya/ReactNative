@@ -20,24 +20,27 @@ const render: ListRenderItem<CarItemType> = ( { item } ) => {
     <View>
       <Image
         style={ styles.carImage }
-        source={ require( '@expo/assets/carImageForCatalog.png' ) }
+        source={ {
+          uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png',
+        } }
       />
     </View>
-    <View style={{
+    <View style={ {
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
       paddingLeft: 11,
       paddingRight: 11,
-    }}>
+    } }>
       <View>
-        <Text style={[styles.text, styles.mainText, {paddingBottom: 0}]}>{item.title}</Text>
-        <Text style={[styles.text, styles.thinText]}>Пробег: <Text style={[styles.text, styles.mainText]}>{item.mileage} км.</Text></Text>
+        <Text style={ [ styles.text, styles.mainText, { paddingBottom: 0 } ] }>{ item.title }</Text>
+        <Text style={ [ styles.text, styles.thinText ] }>Пробег: <Text
+          style={ [ styles.text, styles.mainText ] }>{ item.mileage } км.</Text></Text>
       </View>
       <View>
-        <Text style={[styles.text, styles.thinText, {color: '#BFBFBF'}]}>{item.price} ₽</Text>
-        <Text style={[styles.text, styles.mainText, {color: '#07A95B'}]}>{item.priceWithDiscount} ₽</Text>
+        <Text style={ [ styles.text, styles.thinText, { color: '#BFBFBF' } ] }>{ item.price } ₽</Text>
+        <Text style={ [ styles.text, styles.mainText, { color: '#07A95B' } ] }>{ item.priceWithDiscount } ₽</Text>
       </View>
     </View>
 
@@ -47,7 +50,7 @@ const render: ListRenderItem<CarItemType> = ( { item } ) => {
 const ProfitableOffers = () => {
   return (
     <View>
-      <Text style={ [ styles.text, styles.mainText, {marginBottom: 24} ] }>Выгодные предложения</Text>
+      <Text style={ [ styles.text, styles.mainText, { marginBottom: 24 } ] }>Выгодные предложения</Text>
       <FlatList
         showsVerticalScrollIndicator={ false }
         data={ carItem }
@@ -75,14 +78,14 @@ const styles = StyleSheet.create( {
     backgroundColor: '#fff',
     marginBottom: 10,
     borderRadius: 8,
-    paddingBottom: 11
+    paddingBottom: 11,
   },
   carImage: {
     width: 314,
     minHeight: 108,
     resizeMode: 'contain',
-    marginBottom: 11
-  }
+    marginBottom: 11,
+  },
 } );
 
 export default ProfitableOffers;

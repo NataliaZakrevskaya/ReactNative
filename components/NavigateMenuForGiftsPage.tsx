@@ -1,14 +1,12 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import StitchesInfo from './StitchesInfo';
+import MyBackIcon from '../svg/MyBackIcon';
 
 const NavigateMenuForGiftsPage = () => {
   return (
     <View style={ styles.container }>
-      <Image
-        style={ styles.backIcon }
-        source={ require( '@expo/assets/backIcon.png' ) }
-      />
+      <MyBackIcon style={ styles.backIcon }/>
       <Text style={ [ styles.text, styles.mainText ] }>Подарки за баллы</Text>
       <StitchesInfo stitchesCount={ 340 }/>
     </View>

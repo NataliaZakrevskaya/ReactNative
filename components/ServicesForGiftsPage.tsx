@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, View } from 'react-native';
 import StitchesInfo from './StitchesInfo';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
 export const WIDTH = width;
@@ -30,21 +31,20 @@ const renderServices: ListRenderItem<ServiceType> = ( { item } ) => {
         justifyContent: 'flex-start',
       } }>
         <Text style={ [ styles.text, styles.thinText, { fontSize: 12, marginRight: 4 } ] }>Подробнее</Text>
-        <Image
-          style={ styles.arrowRight }
-          source={ require( '@expo/assets/arrowRight.png' ) }
-        />
+        <MyArrowRightSvg style={ styles.arrowRight }/>
       </View>
     </View>
-    <View style={{
+    <View style={ {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-end',
-    }}>
+    } }>
       <StitchesInfo stitchesCount={ item.stitchesCount }/>
       <Image
         style={ styles.carPicture }
-        source={ require( '@expo/assets/carPicture.png' ) }
+        source={ {
+          uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png',
+        } }
       />
     </View>
   </View>;
@@ -53,7 +53,7 @@ const renderServices: ListRenderItem<ServiceType> = ( { item } ) => {
 const ServicesForGiftsPage = () => {
   return (
     <FlatList
-      style={styles.list}
+      style={ styles.list }
       data={ services }
       renderItem={ renderServices }
     />
@@ -64,7 +64,7 @@ const styles = StyleSheet.create( {
   list: {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 16
+    marginTop: 16,
   },
   text: {
     fontFamily: 'Roboto',

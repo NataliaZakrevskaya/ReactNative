@@ -7,7 +7,9 @@ const DiscountsInfo = () => {
       <Text style={ [ styles.text, styles.mainText, { marginBottom: 11 } ] }>Акции</Text>
       <Image
         style={ styles.discountImage }
-        source={ require( '@expo/assets/discountImage.png' ) }
+        source={ {
+          uri: 'https://time.com/nextadvisor/wp-content/uploads/2022/03/Male-female-credit-card-survey.jpg',
+        } }
       />
     </View>
   );

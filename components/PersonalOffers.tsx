@@ -24,7 +24,9 @@ const renderOffers: ListRenderItem<OfferType> = ( { item } ) => {
     <View>
       <Image
         style={ styles.carPicture }
-        source={ require( '@expo/assets/carPictureForOffer.png' ) }
+        source={{
+          uri: 'https://cdn4.iconfinder.com/data/icons/love-velentine/140/car__gift__vehicle__present__surprise-512.png'
+      } }
       />
     </View>
   </View>;
@@ -76,6 +78,7 @@ const styles = StyleSheet.create( {
   carPicture: {
     width: 128,
     height: 90,
+    resizeMode: 'contain'
   },
 } );
 

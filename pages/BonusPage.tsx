@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import MyBackIcon from '../svg/MyBackIcon';
 
 const { height, width } = Dimensions.get( 'screen' );
 const WIDTH = width;
@@ -17,19 +18,19 @@ const BonusPage = () => {
         justifyContent: 'space-between',
         width: ( ( WIDTH / 3 ) * 1.9 ),
       } }>
-        <Image
-          style={ styles.backIcon }
-          source={ require( '@expo/assets/backIcon.png' ) }
-        />
+        <MyBackIcon style={ styles.backIcon }/>
         <Text style={ [ styles.text, styles.mainText ] }>
           { serviceName }
         </Text>
       </View>
       <Image
         style={ styles.autoImage }
-        source={ require( '@expo/assets/carImage.png' ) }
+        source={ {
+          uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png',
+        }}
       />
-      <Text style={ [ styles.text, styles.mainText, {marginBottom: 12} ] }>Любая услуга или товар добавленная сотрудником</Text>
+      <Text style={ [ styles.text, styles.mainText, { marginBottom: 12 } ] }>Любая услуга или товар добавленная
+        сотрудником</Text>
       <Text style={ [ styles.text, styles.thinText ] }>Полное описание подарочной акции </Text>
     </View>
   );

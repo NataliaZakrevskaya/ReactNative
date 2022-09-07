@@ -1,23 +1,22 @@
 import React from 'react';
-import NavigateMenu from '../components/NavigateMenu';
 import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, TextInput, View } from 'react-native';
+import NavigateMenu from '../components/NavigateMenu';
 import MyBaseSvg from '../svg/MyBaseSvg';
 import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
 const WIDTH = width;
 const PADDING_HORIZONTAL = 13;
-
-type BrandType = {
+type ModelType = {
   id: number
   name: string
 }
-const brands: BrandType[] = new Array( 7 ).fill( null ).map( ( item, index ) => ( {
+const models: ModelType[] = new Array( 7 ).fill( null ).map( ( item, index ) => ( {
   id: index + 1,
-  name: `Audi`,
+  name: `A1`,
 } ) );
-const renderBrands: ListRenderItem<BrandType> = ( { item } ) => {
-  return <View style={ styles.brandItem }>
+const renderModels: ListRenderItem<ModelType> = ( { item } ) => {
+  return <View style={ styles.modelItem }>
     <View style={ {
       display: 'flex',
       flexDirection: 'row',
@@ -29,10 +28,10 @@ const renderBrands: ListRenderItem<BrandType> = ( { item } ) => {
   </View>;
 };
 
-const TradeInChoiceBrandPage = () => {
+const TradeInChoiceModelPage = () => {
   return (
     <View>
-      <NavigateMenu navName={ 'Рассчет TRADE-IN' }/>
+      <NavigateMenu navName={ 'Модель' }/>
       <TextInput
         style={ styles.input }
         onChangeText={ () => {
@@ -40,10 +39,9 @@ const TradeInChoiceBrandPage = () => {
         value={ '' }
         placeholder="Поиск"
       />
-      <Text style={ [ styles.text, styles.mainText, { marginBottom: 7 } ] }>Популярные Марки</Text>
       <FlatList
-        data={ brands }
-        renderItem={ renderBrands }
+        data={ models }
+        renderItem={ renderModels }
       />
     </View>
   );
@@ -73,7 +71,7 @@ const styles = StyleSheet.create( {
     paddingTop: 17,
     paddingBottom: 17,
   },
-  brandItem: {
+  modelItem: {
     width: ( WIDTH - ( PADDING_HORIZONTAL * 2 ) ),
     height: 50,
     backgroundColor: '#fff',
@@ -98,4 +96,4 @@ const styles = StyleSheet.create( {
   },
 } );
 
-export default TradeInChoiceBrandPage;
+export default TradeInChoiceModelPage;

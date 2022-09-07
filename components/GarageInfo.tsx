@@ -3,8 +3,7 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import AutoCard from './AutoCard';
 
 const { height, width } = Dimensions.get( 'screen' );
-export const WIDTH = width;
-const PADDING_HORIZONTAL = 13;
+const WIDTH = width;
 
 const GarageInfo = () => {
   return (

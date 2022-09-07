@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
 
 const { height, width } = Dimensions.get( 'screen' );
 export const WIDTH = width;
@@ -27,16 +28,15 @@ const renderServices: ListRenderItem<ServiceType> = ( { item } ) => {
         justifyContent: 'flex-start',
       } }>
         <Text style={ [ styles.text, styles.thinText, { fontSize: 12, marginRight: 4 } ] }>Подробнее</Text>
-        <Image
-          style={ styles.arrowRight }
-          source={ require( '@expo/assets/arrowRight.png' ) }
-        />
+        <MyArrowRightSvg style={ styles.arrowRight }/>
       </View>
     </View>
     <View>
       <Image
         style={ styles.carPicture }
-        source={ require( '@expo/assets/carPicture.png' ) }
+        source={{
+      uri: 'https://cdn4.iconfinder.com/data/icons/love-velentine/140/car__gift__vehicle__present__surprise-512.png'
+      } }
       />
     </View>
   </View>;
@@ -45,7 +45,7 @@ const renderServices: ListRenderItem<ServiceType> = ( { item } ) => {
 const SpecialOffer = () => {
   return (
     <View>
-      <Text style={ [ styles.text, styles.mainText, { marginBottom: 19 }] }>
+      <Text style={ [ styles.text, styles.mainText, { marginBottom: 19 } ] }>
         Особые предложения
       </Text>
       <View>

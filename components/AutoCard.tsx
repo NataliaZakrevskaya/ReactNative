@@ -23,7 +23,9 @@ const AutoCard = () => {
       <View>
         <Image
           style={ styles.autoImage }
-          source={ require( '@expo/assets/carImage.png' ) }
+          source={{
+            uri: 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png'
+          }}
         />
         <Pressable style={ ( { pressed } ) => [
           {

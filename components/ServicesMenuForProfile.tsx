@@ -1,9 +1,10 @@
 import React from 'react';
-import { Dimensions, FlatList, Image, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, FlatList, ListRenderItem, StyleSheet, Text, View } from 'react-native';
+import MyArrowRightSvg from '../svg/MyArrowRightSvg';
+import MyWrenchIcon from '../svg/MyWrenchIcon';
 
 const { height, width } = Dimensions.get( 'screen' );
 const WIDTH = width;
-const HEIGHT = height;
 const PADDING_HORIZONTAL = 13;
 const titles = [ 'История заказов', 'Документы', 'Trade-in' ];
 
@@ -14,16 +15,10 @@ const getItem: ListRenderItem<string> = ( { item } ) => {
       flexDirection: 'row',
       alignItems: 'center',
     } }>
-      <Image
-        style={ styles.wrenchIcon }
-        source={ require( '@expo/assets/wrenchIcon.png' ) }
-      />
+      <MyWrenchIcon style={ styles.wrenchIcon }/>
       <Text>{ item }</Text>
     </View>
-    <Image
-      style={ styles.arrowRight }
-      source={ require( '@expo/assets/arrowRight.png' ) }
-    />
+    <MyArrowRightSvg/>
   </View>;
 };
 
@@ -53,14 +48,12 @@ const styles = StyleSheet.create( {
     borderRadius: 8,
   },
   wrenchIcon: {
-    width: 25.38,
-    height: 24,
     marginRight: 10.57,
   },
-  arrowRight: {
-    height: 14,
-    width: 8.97,
-  },
+  /*  arrowRight: {
+      height: 14,
+      width: 8.97,
+    },*/
 } );
 
 export default ServicesMenuForProfile;

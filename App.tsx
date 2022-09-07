@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import TradeInChoiceBrandPage from './pages/TradeInChoiceBrandPage';
+import MainPage from './pages/MainPage';
 
 const PADDING_HORIZONTAL = 13;
 
@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <ScrollView style={ styles.container }>
-      <TradeInChoiceBrandPage/>
+      <MainPage/>
       <StatusBar style="auto"/>
     </ScrollView>
   );
