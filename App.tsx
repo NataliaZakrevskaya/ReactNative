@@ -1,27 +1,33 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import MainPage from './pages/MainPage';
-
-const PADDING_HORIZONTAL = 13;
+import { NavigationContainer } from '@react-navigation/native';
+import { Main } from './src/components/Main';
 
 export default function App() {
-
+  const isAuth = true;
   return (
-    <ScrollView style={ styles.container }>
-      <MainPage/>
-      <StatusBar style="auto"/>
-    </ScrollView>
+    <NavigationContainer>
+      <View style={ isAuth ? styles.container : styles.containerWithoutLogin }>
+        <Main/>
+        <StatusBar style="dark"/>
+      </View>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create( {
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
-    paddingHorizontal: PADDING_HORIZONTAL,
-    paddingVertical: 42,
-    display: 'flex',
+    backgroundColor: 'white',
+   /* backgroundColor: '#f9f9fa',*/
+    paddingTop: 22,
+  },
+  containerWithoutLogin: {
+    flex: 1,
+    backgroundColor: 'white',
+    /*backgroundColor: '#f9f9fa',*/
+    paddingTop: 18,
   },
 } );
 
